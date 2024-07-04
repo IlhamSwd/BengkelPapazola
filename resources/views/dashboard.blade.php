@@ -13,7 +13,7 @@
 
             <figure class="highcharts-figure">
                 <div id="container"></div>
-                <p class="highcharts-description text-dark">
+                <p class="highcharts-description text-white">
                     Ini adalah sebuah grafik pembayaran yang menampilkan banyak produk yang terjual di bengkelmotor Papazola.
                 </p>
             </figure>
@@ -75,8 +75,8 @@
                         type: 'column'
                     },
                     title: {
-                        text: 'Grafik Produk terjual',
-                        align: 'left'
+                        text: 'Grafik Produk Terjual',
+                        align: 'center'
                     },
                     subtitle: {
                         text: 'Source: <a target="_blank" ' +
@@ -97,11 +97,11 @@
                     yAxis: {
                         min: 0,
                         title: {
-                            text: '1000 metric tons (MT)'
+                            text: 'Jumlah (Produk)'
                         }
                     },
                     tooltip: {
-                        valueSuffix: ' (1000 MT)'
+                        valueSuffix: ' (Produk)'
                     },
                     plotOptions: {
                         column: {
@@ -111,7 +111,7 @@
                     },
                     series: [ //jumlah grafik
                         {
-                            name: 'pembayaran',
+                            name: 'Produk',
                             data: [
                                 @foreach ($pembayaranproduk as $item)
                                     {{ $item->jumlah }},
