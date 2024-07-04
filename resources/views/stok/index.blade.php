@@ -33,6 +33,12 @@
                   <td class="text-center">{{ $item['produk'] }}</td>
                   <td class="text-center">{{ $item['harga_satuan'] }}</td>
                   <td class="text-center">
+                    @can('update', $item)
+                      <a href="{{ route('stok.edit', $item['id']) }}" class="btn btn-rounded btn-warning">
+                        <i class="menu-icon mdi mdi-pencil"></i>
+                        <span class="menu-title">Edit</span>
+                      </a>
+                    @endcan
                     @can('delete', $item)
                       <form method="POST" action="{{ route('stok.destroy', $item['id']) }}" style="display:inline-block">
                         @csrf
@@ -42,12 +48,6 @@
                           <span class="menu-title">Hapus</span>
                         </button>
                       </form> 
-                    @endcan
-                    @can('update', $item)
-                      <a href="{{ route('stok.edit', $item['id']) }}" class="btn btn-rounded btn-warning">
-                        <i class="menu-icon mdi mdi-pencil"></i>
-                        <span class="menu-title">Edit</span>
-                      </a>
                     @endcan
                   </td>
                 </tr>

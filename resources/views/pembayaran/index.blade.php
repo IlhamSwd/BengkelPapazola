@@ -34,18 +34,22 @@
                   <td class="text-center">{{ $item['jumlah'] }}</td>
                   <td class="text-center">{{ $item['jumlah']*$item['stok']['harga_satuan'] }}</td>
                   <td class="text-center">
-                    <a href="{{ route('pembayaran.edit', $item['id']) }}" class="btn btn-rounded btn-warning">
-                      <i class="menu-icon mdi mdi-pencil"></i>
-                      <span class="menu-title">Edit</span>
-                    </a>
-                    <form method="POST" action="{{ route('pembayaran.destroy', $item['id']) }}" style="display:inline-block">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit" class="btn btn-rounded btn-warning show_confirm">
-                        <i class="menu-icon mdi-eraser-variant"></i>
-                        <span class="menu-title">Hapus</span>
-                      </button>
-                    </form>
+                    @can('update', $item)
+                      <a href="{{ route('pembayaran.edit', $item['id']) }}" class="btn btn-rounded btn-warning">
+                        <i class="menu-icon mdi mdi-pencil"></i>
+                        <span class="menu-title">Edit</span>
+                      </a>
+                    @endcan
+                    @can('delete', $item)
+                      <form method="POST" action="{{ route('pembayaran.destroy', $item['id']) }}" style="display:inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-rounded btn-warning show_confirm">
+                          <i class="menu-icon mdi-eraser-variant"></i>
+                          <span class="menu-title">Hapus</span>
+                        </button>
+                      </form> 
+                    @endcan
                   </td>
                 </tr>
               @endforeach
