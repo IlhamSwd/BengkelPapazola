@@ -41,9 +41,9 @@
                       <form method="POST" action="{{ route('montir.destroy', $item['id']) }}" style="display:inline-block">
                         @method('DELETE')
                         @csrf
-                        <button type="submit"
-                          class="btn btn-sm btn-rounded btn-danger show_confirm"
-                          data-name={{ $item['nama'] }}>Hapus
+                        <button type="submit" class="btn btn-rounded btn-warning show_confirm">
+                          <i class="menu-icon mdi-eraser-variant"></i>
+                          <span class="menu-title">Hapus</span>
                         </button>
                       </form> 
                     @endcan
