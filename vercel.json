@@ -14,6 +14,18 @@
             "dest": "/public/css/"
         },
         {
+            "src": "/assets/(.*)",
+            "dest": "/public/assets/"
+        },
+        {
+            "src": "/fotocustomer/(.*)",
+            "dest": "/public/fotocustomer/"
+        },
+        {
+            "src": "/fotomontir/(.*)",
+            "dest": "/public/fotomontir/"
+        },
+        {
             "src": "/images/(.*)",
             "dest": "/public/images/"
         },
@@ -24,6 +36,10 @@
         {
             "src": "/vendors/(.*)",
             "dest": "/public/vendors/"
+        },
+        {
+            "src": "/webfonts/(.*)",
+            "dest": "/public/webfonts/"
         },
         {
             "src": "/(.*)",
