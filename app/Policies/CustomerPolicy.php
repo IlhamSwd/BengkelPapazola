@@ -29,7 +29,8 @@ class CustomerPolicy
      */
     public function create(User $user): bool
     {
-        return $user->role === 'A';
+        return $user->role === 'A'| $user->role === 'U';
+        //  // return in_array($user->role, ['A', 'U']);
     }
 
     /**

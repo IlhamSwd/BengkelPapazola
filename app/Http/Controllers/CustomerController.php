@@ -12,11 +12,13 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        // if(auth()->user()->role == 'U') {
-        //     $customer = Customer::where('user_id', auth()->user()->id)->get();
-        //     //select * from mahasiswas where user_id = 1
-        // } else {
+        if(auth()->user()->role == 'A') {
+            $customer = Customer::where('user_id', auth()->user()->id)->get();
+            //select * from mahasiswas where user_id = 1
+        } else {
         $customer = Customer::all();
+        
+        }
 
         return view('customer.index')
                 ->with('customer', $customer);
@@ -49,9 +51,10 @@ class CustomerController extends Controller
             'tanggal_lahir' => 'required|max:50',
             'jenis_motor' => 'required|max:50',
             'plat_kendaraan' => 'required|max:50',
-            'keluhan_servis' => 'required|max:50'
+            'keluhan_servis' => 'required|max:50',
 
         ]);
+        $val['user_id'] = auth()->user()->id;
           // ekstensi file yang di upload
           $ext = $request->url_customer->getClientOriginalExtension();
           // rename misal : npm.extensi 2226240152s
@@ -98,7 +101,8 @@ class CustomerController extends Controller
                 'tanggal_lahir' => 'required|max:50',
                 'jenis_motor' => 'required|max:50',
                 'plat_kendaraan' => 'required|max:50',
-                'keluhan_servis' => 'required|max:50'
+                'keluhan_servis' => 'required|max:50',
+                
             ]);
              // ekstensi file yang di upload
              $ext = $request->url_customer->getClientOriginalExtension();
@@ -117,7 +121,8 @@ class CustomerController extends Controller
                 'tanggal_lahir' => 'required|max:50',
                 'jenis_motor' => 'required|max:50',
                 'plat_kendaraan' => 'required|max:50',
-                'keluhan_servis' => 'required|max:50'
+                'keluhan_servis' => 'required|max:50',
+                
             ]);
         }
         //simpan tabel montir

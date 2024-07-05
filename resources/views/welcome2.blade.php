@@ -19,7 +19,7 @@
         <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
         <!-- Webpage Title -->
-        <title>Ioniq Webpage Title</title>
+        <title>BengkelMotor Papazola</title>
         
         <!-- Styles -->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -37,8 +37,8 @@
         <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
             <div class="container">
 
-                <!-- Image Logo -->
-                <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> 
+                {{-- <!-- Image Logo -->
+                <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>  --}}
 
                 <!-- Text Logo - Use this if you don't have a graphic logo -->
                 <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->

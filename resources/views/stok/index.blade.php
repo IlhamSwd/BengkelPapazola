@@ -39,16 +39,16 @@
                         <span class="menu-title">Edit</span>
                       </a>
                     @endcan
-                    @can('delete', $item)
-                      <form method="POST" action="{{ route('stok.destroy', $item['id']) }}" style="display:inline-block">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-rounded btn-warning show_confirm">
-                          <i class="menu-icon mdi-eraser-variant"></i>
-                          <span class="menu-title">Hapus</span>
-                        </button>
-                      </form> 
-                    @endcan
+                      @can('delete', $item)
+                        <form method="POST" action="{{ route('stok.destroy', $item['id']) }}" style="display:inline-block">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="btn btn-rounded btn-warning show_confirm">
+                            <i class="menu-icon mdi-eraser-variant"></i>
+                            <span class="menu-title">Hapus</span>
+                          </button>
+                        </form> 
+                      @endcan
                   </td>
                 </tr>
               @endforeach
