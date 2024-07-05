@@ -30,7 +30,7 @@
             <tbody>
               @foreach ($customer as $item)
                 <tr>
-                  <td class="text-center"><img src="{{ url('fotocustomer/'.$item['url_customer']) }}" style="max-width: 50px"></td>
+                  <td class="text-center"><img src="{{ $item['url_customer'] }}" style="max-width: 50px"></td>
                   <td class="text-center">{{ $item['nama'] }}</td>
                   <td class="text-center">{{ $item['jenis_kelamin'] }}</td>
                   <td class="text-center">{{ $item['nomor_telepon'] }}</td>

@@ -29,7 +29,7 @@
             <tbody>
               @foreach ($montir as $item)
                 <tr>
-                  <td class="text-center"><img src="{{ url('fotomontir/'.$item['url_montir'])}}" style="max-width: 50px"></td>
+                  <td class="text-center"><img src="{{ $item['url_montir'] }}" style="max-width: 50px"></td>
                   <td class="text-center">{{ $item['nama'] }}</td>
                   <td class="text-center">{{ $item['jenis_kelamin'] }}</td>
                   <td class="text-center">{{ $item['nomor_telepon'] }}</td>

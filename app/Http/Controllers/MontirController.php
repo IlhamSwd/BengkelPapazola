@@ -87,6 +87,7 @@ class MontirController extends Controller
           
              //upload ke dalam folder public/foto
              $request->url_montir->move('fotomontir/', $val['url_montir']);
+             
         }else{
             $val = $request->validate([
                 //'url_montir'=> 'required|file|mimes:jpeg,png|max:5000',
