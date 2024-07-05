@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="url_customer" class="form-label text-dark">Foto</label>
-                                <input type="file" class="form-control" id="url_customer" name='url_customer' value="{{ old('url_customer') ? old('url_customer') : $customer["url_customer"] }}" placeholder="Masukan foto"/>
+                                <input type="url" class="form-control" id="url_customer" name='url_customer' value="{{ old('url_customer') ? old('url_customer') : $customer["url_customer"] }}" placeholder="Masukan foto"/>
                                 @Error('url_customer')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror

@@ -42,7 +42,7 @@ class CustomerController extends Controller
         }
         
         $val = $request->validate([
-            'url_customer'=> 'required|file|mimes:jpeg,png|max:5000',
+            'url_customer'=> 'required|url',
             'nama' => 'required|max:50',
             'jenis_kelamin' => 'required|max:50',
             'nomor_telepon' => 'required|max:50',
@@ -57,12 +57,7 @@ class CustomerController extends Controller
         $val['user_id'] = auth()->user()->id;
 
         
-          // ekstensi file yang di upload
-          $ext = $request->url_customer->getClientOriginalExtension();
-          // rename misal : npm.extensi 2226240152s
-          $val['url_customer'] = $request->nama.".".$ext;
-          //upload ke dalam folder public/foto
-          $request->url_customer->move('fotocustomer/', $val['url_customer']);
+      
  
          // simpan tabel fakultas
          Customer::create($val);
@@ -94,7 +89,7 @@ class CustomerController extends Controller
     {
         if ($request->url_customer){
             $val = $request->validate([
-                'url_customer'=> 'required|file|mimes:jpeg,png|max:5000',
+                'url_customer'=> 'required|url',
                 'nama' => 'required|max:50',
                 'jenis_kelamin' => 'required|max:50',
                 'nomor_telepon' => 'required|max:50',
@@ -106,12 +101,7 @@ class CustomerController extends Controller
                 'keluhan_servis' => 'required|max:50',
                 
             ]);
-             // ekstensi file yang di upload
-             $ext = $request->url_customer->getClientOriginalExtension();
-             // rename misal : npm.extensi 2226240152.png
-             $val['url_customer'] = $request->nama.".".$ext;
-             //upload ke dalam folder public/foto
-             $request->url_customer->move('fotocustomer/', $val['url_customer']);
+         
         }else{
             $val = $request->validate([
                 //'url_customer'=> 'required|file|mimes:jpeg,png|max:5000',

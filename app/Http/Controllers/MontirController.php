@@ -36,7 +36,7 @@ class MontirController extends Controller
         }
 
         $val = $request->validate([
-            'url_montir'=> 'required|file|mimes:jpeg,png|max:5000',
+            'url_montir'=> 'required|url',
             'nama' => 'required|max:50',
             'jenis_kelamin' => 'required|max:50',
             'nomor_telepon' => 'required|max:50',
@@ -44,13 +44,7 @@ class MontirController extends Controller
             'tempat_lahir' => 'required|max:50',
             'tanggal_lahir' => 'required|max:50'
         ]);
-         // ekstensi file yang di upload
-         $ext = $request->url_montir->getClientOriginalExtension();
-         // rename misal : npm.extensi 2226240152.png
-         $val['url_montir'] = $request->nama.".".$ext;
-         //upload ke dalam folder public/foto
-         $request->url_montir->move('fotomontir/', $val['url_montir']);
- 
+        
          // simpan tabel fakultas
          Montir::create($val);
  
@@ -81,7 +75,7 @@ class MontirController extends Controller
     {
         if ($request->url_montir){
             $val = $request->validate([
-                'url_montir'=> 'required|file|mimes:jpeg,png|max:5000',
+                'url_montir'=> 'required|url',
                 'nama' => 'required|max:50',
                 'jenis_kelamin' => 'required|max:50',
                 'nomor_telepon' => 'required|max:50',
@@ -90,9 +84,7 @@ class MontirController extends Controller
                 'tanggal_lahir' => 'required|max:50'
             ]);
              // ekstensi file yang di upload
-             $ext = $request->url_montir->getClientOriginalExtension();
-             // rename misal : npm.extensi 2226240152.png
-             $val['url_montir'] = $request->nama.".".$ext;
+          
              //upload ke dalam folder public/foto
              $request->url_montir->move('fotomontir/', $val['url_montir']);
         }else{

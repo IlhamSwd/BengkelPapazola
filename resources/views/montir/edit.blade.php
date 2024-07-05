@@ -71,7 +71,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="url_montir" class="form-label text-dark">Foto</label>
-                                <input type="file" class="form-control" id="url_montir" name='url_montir'
+                                <input type="url" class="form-control" id="url_montir" name='url_montir'
                                     value="{{ old('url_montir') ? old('url_montir') : $montir['url_montir'] }}" />
                                 @Error('url_montir')
                                     <span class="text-danger">{{ $message }}</span>

@@ -58,7 +58,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="url_montir" class="form-label text-dark">Foto</label>
-                                <input type="file" class="form-control" id="url_montir" name='url_montir' placeholder="masukan foto"/>
+                                <input type="url" class="form-control" id="url_montir" name='url_montir' placeholder="masukan foto"/>
                                 @Error('url_montir')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
