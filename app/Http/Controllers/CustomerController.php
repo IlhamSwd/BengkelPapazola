@@ -55,6 +55,8 @@ class CustomerController extends Controller
 
         ]);
         $val['user_id'] = auth()->user()->id;
+
+        
           // ekstensi file yang di upload
           $ext = $request->url_customer->getClientOriginalExtension();
           // rename misal : npm.extensi 2226240152s
