@@ -12,14 +12,14 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->role == 'A') {
+        if(auth()->user()->role == 'U') {
             $customer = Customer::where('user_id', auth()->user()->id)->get();
             //select * from mahasiswas where user_id = 1
         } else {
         $customer = Customer::all();
         
         }
-
+        
         return view('customer.index')
                 ->with('customer', $customer);
     }
@@ -56,9 +56,6 @@ class CustomerController extends Controller
         ]);
         $val['user_id'] = auth()->user()->id;
 
-        
-      
- 
          // simpan tabel fakultas
          Customer::create($val);
  
@@ -104,7 +101,7 @@ class CustomerController extends Controller
          
         }else{
             $val = $request->validate([
-                //'url_customer'=> 'required|file|mimes:jpeg,png|max:5000',
+                //'url_customer'=> 'required|url',
                 'nama' => 'required|max:50',
                 'jenis_kelamin' => 'required|max:50',
                 'nomor_telepon' => 'required|max:50',
@@ -120,7 +117,7 @@ class CustomerController extends Controller
         //simpan tabel montir
             $customer = Customer::find($customer);
             Customer::where('id', $customer['id'])->update($val);
-
+  
             //redirect ke halaman list montir
             return redirect()->route('customer.index')->with('success', $val['nama']. ' berhasil diubah');
     }

@@ -13,30 +13,32 @@
                             @csrf
                             <div class="form-group">
                                 <label for="kode_barang" class="form-label text-dark">Kode Barang</label>
-                                <input type="text" class="form-control" id="kode_barang" name='kode_barang' placeholder="Masukan kode barang"/>
+                                <input type="text" class="form-control" id="kode_barang" name='kode_barang' placeholder="Masukan kode barang">
                                 @Error('kode_barang')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="nama_barang" class="form-label text-dark">Nama Barang</label>
-                                <input type="text" class="form-control" id="nama_barang" name='nama_barang'placeholder="Masukan Nama barang"/>
+                                <input type="text" class="form-control" id="nama_barang" name='nama_barang'placeholder="Masukan Nama barang">
                                 @Error('nama_barang')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="stok_barang" class="form-label text-dark">Stok Barang</label>
-                                <input type="number" class="form-control" id="stok_barang" name='stok_barang' placeholder="Masukan Stok barang"/>
+                                <input type="number" class="form-control" id="stok_barang" name='stok_barang' placeholder="Masukan Stok barang">
                                 @Error('stok_barang')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="produk" class="form-label text-dark">Produk Barang</label>
-                                <select class="form-control" id="produk" name='produk' placeholder="masukan produk barang">
-                                    <option value="Honda">Honda</option>
-                                    <option value="Yamaha">Yamaha</option>
+                                <select class="form-control" id="produk" name='produk'>
+                                    <option value="Honda" {{ (old('produk') ? old('produk') : $stok['produk']) == 'Honda' ? 'selected' : '' }}>Honda</option>
+                                    <option value="Yamaha" {{ (old('produk') ? old('produk') : $stok['produk']) == 'Yamaha' ? 'selected' : '' }}>Yamaha</option>
+                                    <option value="Suzuki" {{ (old('produk') ? old('produk') : $stok['produk']) == 'Suzuki' ? 'selected' : '' }}>Suzuki</option>
+                                    <option value="Kawasaki" {{ (old('produk') ? old('produk') : $stok['produk']) == 'Kawasaki' ? 'selected' : '' }}>Kawasaki</option>
                                 </select>
                                 @Error('produk')
                                     <span class="text-danger">{{ $message }}</span>
@@ -44,7 +46,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="harga_satuan" class="form-label text-dark">Harga Satuan</label>
-                                <input type="number" class="form-control" id="harga_satuan" name="harga_satuan" placeholder="Masukan harga" />
+                                <input type="number" class="form-control" id="harga_satuan" name="harga_satuan" placeholder="Masukan harga">
                                 @Error('harga_satuan')
                                     <span class="text-danger">{{$message}}</span>
                                 @enderror
