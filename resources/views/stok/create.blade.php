@@ -35,10 +35,10 @@
                             <div class="form-group">
                                 <label for="produk" class="form-label text-dark">Produk Barang</label>
                                 <select class="form-control" id="produk" name='produk'>
-                                    <option value="Honda" {{ (old('produk') ? old('produk') : $stok['produk']) == 'Honda' ? 'selected' : '' }}>Honda</option>
-                                    <option value="Yamaha" {{ (old('produk') ? old('produk') : $stok['produk']) == 'Yamaha' ? 'selected' : '' }}>Yamaha</option>
-                                    <option value="Suzuki" {{ (old('produk') ? old('produk') : $stok['produk']) == 'Suzuki' ? 'selected' : '' }}>Suzuki</option>
-                                    <option value="Kawasaki" {{ (old('produk') ? old('produk') : $stok['produk']) == 'Kawasaki' ? 'selected' : '' }}>Kawasaki</option>
+                                    <option value="Honda">Honda</option>
+                                    <option value="Yamaha">Yamaha</option>
+                                    <option value="Suzuki">Suzuki</option>
+                                    <option value="Kawasaki">Kawasaki</option>
                                 </select>
                                 @Error('produk')
                                     <span class="text-danger">{{ $message }}</span>
