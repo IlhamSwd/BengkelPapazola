@@ -23,16 +23,6 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="stok_id" class="form-label text-dark">Nama Barang</label>
-                                <select class="form-control" id="stok_id" name='stok_id'>
-                                    @foreach ($stok as $item)
-                                        <option value="{{ $item['id'] }}">
-                                            {{$item['nama_barang']}}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label for="customer_id" class="form-label text-dark">Customer</label>
                                 <select class="form-control" id="customer_id" name='customer_id'>
                                     @foreach ($customer as $item)

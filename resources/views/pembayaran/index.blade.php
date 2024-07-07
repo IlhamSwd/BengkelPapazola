@@ -14,7 +14,7 @@
             <thead>
               <tr>
                 <th class="text-center">Kode Barang</th>
-                <th class="text-center">Nama barang</th>
+                {{-- <th class="text-center">Nama barang</th> --}}
                 <th class="text-center">Customer</th>
                 <th class="text-center">Produk Barang</th>
                 <th class="text-center">Harga</th>
@@ -27,7 +27,6 @@
               @foreach ($pembayaran as $item)
                 <tr>
                   <td class="text-center">{{ $item['stok']['kode_barang'] }}</td>
-                  <td class="text-center">{{ $item['stok']['nama_barang'] }}</td>
                   <td class="text-center">{{ $item['customer']['nama'] }}</td>
                   <td class="text-center">{{ $item['stok']['produk'] }}</td>
                   <td class="text-center">{{ $item['stok']['harga_satuan'] }}</td>

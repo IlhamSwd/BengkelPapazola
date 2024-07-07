@@ -14,7 +14,7 @@
             <figure class="highcharts-figure">
                 <div id="container"></div>
                 <p class="highcharts-description text-white">
-                    Ini adalah sebuah grafik pembayaran yang menampilkan banyak produk yang terjual di bengkelmotor Papazola.
+                    Ini adalah sebuah grafik riwayat penjualan produk yang terjual perorangan di bengkelmotor Papazola.
                 </p>
             </figure>
 

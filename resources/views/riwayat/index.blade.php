@@ -17,7 +17,7 @@
             <thead>
               <tr>
                 <th class="text-center">Kode Barang</th>
-                <th class="text-center">Nama Barang</th>
+                {{-- <th class="text-center">Nama Barang</th> --}}
                 <th class="text-center">Produk Barang</th>
                 <th class="text-center">Customer</th>
                 <th class="text-center">Jumlah Barang</th>
@@ -30,7 +30,6 @@
               @foreach ($riwayat as $item)
                 <tr>
                   <td class="text-center">{{ $item['stok']['kode_barang'] }}</td>
-                  <td class="text-center">{{ $item['stok']['nama_barang'] }}</td>
                   <td class="text-center">{{ $item['stok']['produk'] }}</td>
                   <td class="text-center">{{ $item['customer']['nama'] }}</td>
                   <td class="text-center">{{ $item['pembayaran']['jumlah'] }}</td>

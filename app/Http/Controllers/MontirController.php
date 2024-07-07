@@ -83,11 +83,7 @@ class MontirController extends Controller
                 'tempat_lahir' => 'required|max:50',
                 'tanggal_lahir' => 'required|max:50'
             ]);
-             // ekstensi file yang di upload
-          
-             //upload ke dalam folder public/foto
-             $request->url_montir->move('fotomontir/', $val['url_montir']);
-             
+            
         }else{
             $val = $request->validate([
                 //'url_montir'=> 'required|file|mimes:jpeg,png|max:5000',

@@ -84,6 +84,10 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $customer)
     {
+        if ($request->user()->cannot('create', Customer::class)) {
+            abort(403);
+        }
+
         if ($request->url_customer){
             $val = $request->validate([
                 'url_customer'=> 'required|url',
